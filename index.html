@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página oficial de la Escuela Secundaria 0736 Quetzalcóatl. Educamos líderes con valores, tecnología y excelencia académica. Explora nuestro catálogo de materias y accede al portal escolar.">
+  <meta name="keywords" content="escuela secundaria, Quetzalcoatl, educación, materias, portal estudiantil, inscripciones, secundaria 0736">
+  <title>Escuela Secundaria 0736 Quetzalcóatl | Educando Líderes</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons for premium UI look -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar" id="app-top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-phone"></i> +52 (55) 5555-1234</span>
+        <span><i class="fa-solid fa-envelope"></i> contacto@escuela0736.edu.mx</span>
+      </div>
+      <div class="top-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header" id="app-header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo" id="nav-logo">
+        <div class="logo-icon">
+          <img src="./src/assets/logo.png" alt="Logo Escuela Secundaria 0736 Quetzalcóatl" class="logo-img" width="48" height="48">
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">ESC. SEC. 0736 QUETZALCÓATL</span>
+          <span class="logo-subtitle">Educando Líderes, Transformando el Futuro</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="desktop-menu">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active" id="link-inicio">Inicio</a></li>
+          <li><a href="#nosotros" class="nav-link" id="link-nosotros">Nosotros</a></li>
+          <li><a href="#catalogo" class="nav-link" id="link-catalogo">Catálogo</a></li>
+          <li><a href="#contacto" class="nav-link" id="link-contacto">Contacto</a></li>
+          <li><a href="#clase-virtual" class="nav-link" id="link-clase-virtual"><i class="fa-solid fa-video"></i> Clase Virtual</a></li>
+          <li><a href="#login" class="nav-btn-link" id="link-login"><i class="fa-solid fa-user-lock"></i> Login portal escolar</a></li>
+        </ul>
+      </nav>
+
+      <!-- Portal Nav Menu (shown only when student is logged in, replacing standard nav) -->
+      <nav class="nav-menu portal-menu hidden" id="portal-menu">
+        <ul class="nav-list">
+          <li><span class="portal-welcome-text">Hola, <strong id="portal-student-name">Alumno</strong></span></li>
+          <li><a href="#portal" class="nav-link active" id="link-portal">Mi Panel</a></li>
+          <li><button class="logout-btn" id="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Salir</button></li>
+        </ul>
+      </nav>
+
+      <!-- Portal Maestro Nav Menu (shown only when teacher is logged in) -->
+      <nav class="nav-menu portal-maestro-menu hidden" id="portal-maestro-menu">
+        <ul class="nav-list">
+          <li><span class="portal-welcome-text">Hola, <strong id="portal-teacher-name-nav">Docente</strong></span></li>
+          <li><a href="#portal-maestro" class="nav-link active" id="link-portal-maestro">Panel Maestro</a></li>
+          <li><button class="logout-btn" id="btn-logout-teacher"><i class="fa-solid fa-right-from-bracket"></i> Salir</button></li>
+        </ul>
+      </nav>
+
+      <!-- Portal Admin Nav Menu (shown only when admin is logged in) -->
+      <nav class="nav-menu portal-admin-menu hidden" id="portal-admin-menu">
+        <ul class="nav-list">
+          <li><span class="portal-welcome-text portal-welcome-admin">Admin: <strong id="portal-admin-name-nav">Administrador</strong></span></li>
+          <li><a href="#portal-admin" class="nav-link active" id="link-portal-admin">Panel Admin</a></li>
+          <li><button class="logout-btn logout-btn-admin" id="btn-logout-admin"><i class="fa-solid fa-right-from-bracket"></i> Salir</button></li>
+        </ul>
+      </nav>
+
+      <!-- Toggle Menu for Mobile -->
+      <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+        <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobile-nav-drawer">
+      <ul class="mobile-nav-list" id="mobile-nav-list-container">
+        <li><a href="#inicio" class="mobile-nav-link active" id="mob-link-inicio">Inicio</a></li>
+        <li><a href="#nosotros" class="mobile-nav-link" id="mob-link-nosotros">Nosotros</a></li>
+        <li><a href="#catalogo" class="mobile-nav-link" id="mob-link-catalogo">Catálogo</a></li>
+        <li><a href="#contacto" class="mobile-nav-link" id="mob-link-contacto">Contacto</a></li>
+        <li><a href="#clase-virtual" class="mobile-nav-link" id="mob-link-clase-virtual"><i class="fa-solid fa-video"></i> Clase Virtual</a></li>
+        <li><a href="#login" class="mobile-nav-btn" id="mob-link-login"><i class="fa-solid fa-user-lock"></i> Login portal escolar</a></li>
+      </ul>
+      <div class="mobile-nav-portal hidden" id="mobile-portal-container">
+        <div class="mob-welcome-info">
+          <span>Conectado como:</span>
+          <h4 id="mob-student-name">Alumno Demo</h4>
+        </div>
+        <a href="#portal" class="mobile-nav-link" id="mob-link-portal">Mi Panel Escolar</a>
+        <button class="logout-btn mob-logout-btn" id="mob-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+      </div>
+      <div class="mobile-nav-portal hidden" id="mobile-portal-maestro-container">
+        <div class="mob-welcome-info">
+          <span>Conectado como:</span>
+          <h4 id="mob-teacher-name">Docente Demo</h4>
+        </div>
+        <a href="#portal-maestro" class="mobile-nav-link" id="mob-link-portal-maestro">Mi Panel Docente</a>
+        <button class="logout-btn mob-logout-btn" id="mob-btn-logout-teacher"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+      </div>
+      <div class="mobile-nav-portal hidden" id="mobile-portal-admin-container">
+        <div class="mob-welcome-info mob-welcome-admin">
+          <span>Administrador:</span>
+          <h4 id="mob-admin-name">Admin</h4>
+        </div>
+        <a href="#portal-admin" class="mobile-nav-link" id="mob-link-portal-admin">Panel de Administración</a>
+        <button class="logout-btn mob-logout-btn" id="mob-btn-logout-admin"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Sections -->
+  <main class="main-content">
+
+    <!-- 1. SECCIÓN INICIO -->
+    <section id="inicio" class="page-section active">
+      <!-- Image Slider / Hero Banner -->
+      <div class="hero-slider">
+        <div class="slider-container" id="hero-slider-container">
+          <div class="slide active">
+            <video autoplay loop muted playsinline class="slide-video-bg">
+              <source src="./src/assets/campus.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de video.
+            </video>
+            <div class="container slide-content">
+              <span class="badge">Inscripciones Abiertas - Ciclo Escolar 2026-2027</span>
+              <h1>Escuela Secundaria 0736 Quetzalcóatl</h1>
+              <p>Ofrecemos un entorno seguro, tecnológico y humano para que tus hijos desarrollen su máximo potencial intelectual y social.</p>
+              <div class="hero-actions">
+                <a href="#contacto" class="btn btn-primary btn-large">Inicia tu Admisión</a>
+                <a href="#nosotros" class="btn btn-secondary btn-large">Conoce Más</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="slide" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.6)), url('./src/assets/nosotros.png');">
+            <div class="container slide-content">
+              <span class="badge">Excelencia Académica</span>
+              <h1>Desarrollo integral y tecnológico</h1>
+              <p>Nuestros planes de estudio integran laboratorios de robótica, idiomas con certificación internacional y formación artística.</p>
+              <div class="hero-actions">
+                <a href="#catalogo" class="btn btn-primary btn-large">Ver Materias</a>
+                <a href="#contacto" class="btn btn-secondary btn-large">Contáctanos</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide" style="background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.6)), url('./src/assets/materias.png');">
+            <div class="container slide-content">
+              <span class="badge">Comunidad Estudiantil</span>
+              <h1>Un espacio para crecer y brillar</h1>
+              <p>Impulsamos el deporte, el trabajo en equipo y el liderazgo con instalaciones de primera clase diseñadas para el siglo XXI.</p>
+              <div class="hero-actions">
+                <a href="#nosotros" class="btn btn-primary btn-large">Nuestros Pilares</a>
+                <a href="#login" class="btn btn-secondary btn-large">Portal de Alumnos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-btn prev" id="slider-btn-prev" aria-label="Imagen anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="slider-btn-next" aria-label="Siguiente imagen"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="slider-dots-container">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+
+      <!-- Quick Features -->
+      <section class="features-summary">
+        <div class="container">
+          <div class="grid-3">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+              <h3>Educación de Calidad</h3>
+              <p>Enfocados en brindar las herramientas académicas necesarias para el éxito en nivel medio superior.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <h3>Comunidad y Valores</h3>
+              <p>Fomentamos el respeto, la responsabilidad y el trabajo en equipo en un ambiente de apoyo mutuo.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Ambiente Seguro</h3>
+              <p>Un espacio escolar donde cada estudiante se siente protegido e integrado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Welcome and Stats Section -->
+      <section class="home-intro-stats">
+        <div class="container">
+          <div class="grid-2 align-center">
+            <div class="intro-text">
+              <h2>¿Por qué elegir el <span>Escuela 0736 Quetzalcóatl</span>?</h2>
+              <p>En el Escuela 0736 Quetzalcóatl sabemos que cada estudiante es único. Contamos con una metodología educativa centrada en el alumno, donde combinamos el rigor académico con el desarrollo de la inteligencia emocional y el pensamiento crítico.</p>
+              <p>Nuestros egresados son reconocidos por su alta capacidad de resolución de problemas, dominio de idiomas y valores sólidos, permitiéndoles ingresar a las universidades más prestigiosas del país y del extranjero.</p>
+              <div class="intro-badges">
+                <span><i class="fa-solid fa-shield-halved text-emerald"></i> Entorno Seguro</span>
+                <span><i class="fa-solid fa-chalkboard-user text-emerald"></i> Atención Personalizada</span>
+                <span><i class="fa-solid fa-flask text-emerald"></i> Laboratorios Modernos</span>
+              </div>
+            </div>
+            <div class="stats-counter-grid">
+              <div class="stat-box">
+                <span class="stat-number" id="stat-students" data-target="950">0</span>
+                <span class="stat-label">Alumnos Activos</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number" id="stat-teachers" data-target="72">0</span>
+                <span class="stat-label">Docentes Certificados</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number" id="stat-satisfaction" data-target="98">0</span>
+                <span class="stat-label">% Satisfacción Padres</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number" id="stat-history" data-target="25">0</span>
+                <span class="stat-label">Años de Trayectoria</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Notice Banner -->
+      <section class="banner-notice">
+        <div class="container notice-wrapper">
+          <div class="notice-info">
+            <h3><i class="fa-solid fa-bullhorn animated-bell"></i> ¡Visita nuestro campus virtual o agenda un recorrido presencial hoy mismo!</h3>
+            <p>Descubre el ambiente donde tus hijos construirán su futuro educativo.</p>
+          </div>
+          <a href="#contacto" class="btn btn-secondary-light">Agendar Visita</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- 2. SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="page-section">
+      <div class="section-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('./src/assets/nosotros.png');">
+        <div class="container text-center">
+          <h2>Sobre Nosotros</h2>
+          <p class="section-lead">Una institución comprometida con la excelencia académica, la ética y la innovación desde hace 25 años.</p>
+        </div>
+      </div>
+
+      <div class="container section-padding">
+        <!-- Mission, Vision & Values -->
+        <div class="grid-3 m-b-5">
+          <div class="card card-premium card-mision">
+            <div class="card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+            <h3>Nuestra Misión</h3>
+            <p>Formar integralmente a niños y jóvenes con un alto nivel académico, bilingüe y ético, capaces de incidir positivamente en su entorno mediante el liderazgo, el pensamiento científico y el sentido de comunidad.</p>
+          </div>
+          
+          <div class="card card-premium card-vision">
+            <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Nuestra Visión</h3>
+            <p>Ser reconocidos para el 2030 como la institución educativa líder del país en innovación tecnológica y formación humana, egresando ciudadanos globales con alta responsabilidad ecológica y social.</p>
+          </div>
+
+          <div class="card card-premium card-valores">
+            <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h3>Nuestros Valores</h3>
+            <ul class="values-list">
+              <li><strong>Excelencia:</strong> Buscamos el mayor estándar en todo.</li>
+              <li><strong>Respeto:</strong> Valoramos la diversidad y la dignidad humana.</li>
+              <li><strong>Integridad:</strong> Actuamos con rectitud y honestidad.</li>
+              <li><strong>Innovación:</strong> Fomentamos el cambio y la creatividad.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Director Message / Letter -->
+        <div class="director-section grid-2 align-center m-b-5">
+          <div class="director-img-wrapper">
+            <div class="director-frame">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Directora del Escuela 0736 Quetzalcóatl" class="director-img">
+            </div>
+            <div class="director-badge-info">
+              <h4>Dra. Mariana Ortega</h4>
+              <span>Directora General - Ph.D. en Educación</span>
+            </div>
+          </div>
+          <div class="director-letter">
+            <span class="letter-quote"><i class="fa-solid fa-quote-left"></i></span>
+            <h2>Mensaje de nuestra Dirección</h2>
+            <p>Estimada comunidad del Escuela 0736 Quetzalcóatl, es un honor darles la bienvenida a nuestro portal web. Desde nuestra fundación, nos hemos dedicado a crear un espacio donde la curiosidad intelectual se enciende y el carácter se forja a través de valores éticos.</p>
+            <p>Hoy, nos enfrentamos a un mundo en constante cambio tecnológico y social. Por ello, nuestro compromiso es proveer a nuestros estudiantes no solo del conocimiento técnico y científico, sino de las habilidades emocionales e interpersonales necesarias para liderar con empatía y resiliencia.</p>
+            <p>Los invito a explorar nuestro catálogo de materias de vanguardia y a formar parte de esta gran familia que camina unida hacia el futuro de la educación.</p>
+            <div class="director-signature">
+              <span class="signature-text">Dra. Mariana Ortega</span>
+              <span class="signature-title">Directora General, Escuela 0736 Quetzalcóatl</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive History Timeline -->
+        <div class="history-timeline-section text-center">
+          <h2>Nuestra Historia</h2>
+          <p class="timeline-intro m-b-3">El camino que hemos recorrido construyendo el futuro educativo.</p>
+          
+          <div class="timeline">
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2001</span>
+                <h3>Fundación del Colegio</h3>
+                <p>Nace el Escuela 0736 Quetzalcóatl con solo 40 alumnos en nivel preescolar, bajo la idea de ofrecer educación bilingüe activa.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2008</span>
+                <h3>Expansión a Secundaria</h3>
+                <p>Inauguramos el campus central con laboratorios de ciencias avanzados y abrimos los niveles de primaria y secundaria.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <span class="timeline-year">2016</span>
+                <h3>Educación 4.0</h3>
+                <p>Incorporamos el programa STEAM (Ciencias, Tecnología, Ingeniería, Arte y Matemáticas) y abrimos las aulas de Robótica.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <span class="timeline-year">2021</span>
+                <h3>Campus Sostenible y Bicultural</h3>
+                <p>Instalamos celdas solares, sistemas de captación pluvial y nos certificamos como colegio ecológico, junto a alianzas académicas internacionales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN CATÁLOGO DE MATERIAS -->
+    <section id="catalogo" class="page-section">
+      <div class="section-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('./src/assets/materias.png');">
+        <div class="container text-center">
+          <h2>Catálogo de Materias</h2>
+          <p class="section-lead">Explora nuestra oferta académica de vanguardia diseñada para desarrollar el intelecto, la tecnología y el arte.</p>
+        </div>
+      </div>
+
+      <div class="container section-padding">
+        
+        <!-- Filter and Search Bar Control -->
+        <div class="catalog-controls">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="catalog-search-input" placeholder="Buscar materia, tema o profesor...">
+          </div>
+          
+          <div class="filter-buttons" id="catalog-filters">
+            <button class="filter-btn active" data-category="todas">Todas</button>
+            <button class="filter-btn" data-category="tecnologia">Tecnología e Ingeniería</button>
+            <button class="filter-btn" data-category="ciencias">Ciencias Experimentales</button>
+            <button class="filter-btn" data-category="humanidades">Humanidades e Idiomas</button>
+            <button class="filter-btn" data-category="artes">Artes y Deportes</button>
+          </div>
+        </div>
+
+        <!-- Subjects Grid (Dynamic Content via JS) -->
+        <div class="subjects-grid" id="subjects-container">
+          <!-- Las tarjetas de materias serán inyectadas de forma dinámica mediante JavaScript -->
+        </div>
+
+        <!-- Empty State Search -->
+        <div class="empty-state-search hidden" id="empty-state-container">
+          <i class="fa-regular fa-folder-open"></i>
+          <h3>No se encontraron materias</h3>
+          <p>Intenta buscando con palabras clave como "Matemáticas", "Robótica", "Física", "Inglés" o cambia de categoría.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Subject Detail Modal (Pop-up overlay) -->
+    <div class="modal-overlay" id="subject-modal">
+        <div class="modal-card">
+          <button class="modal-close" id="btn-close-modal" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+          <div class="modal-header">
+            <span class="modal-badge" id="modal-sub-category">Categoría</span>
+            <h2 id="modal-sub-title">Nombre de la Materia</h2>
+            <p class="modal-level" id="modal-sub-level">Grado Escolar: Secundaria</p>
+          </div>
+          <div class="modal-body">
+            <div class="modal-info-column">
+              <h3>Descripción del Curso</h3>
+              <p id="modal-sub-desc">Esta es la descripción detallada de la materia...</p>
+              
+              <h3>Objetivos de Aprendizaje</h3>
+              <ul class="modal-objectives" id="modal-sub-objectives">
+                <li>Objetivo 1</li>
+                <li>Objetivo 2</li>
+              </ul>
+            </div>
+            
+            <div class="modal-sidebar">
+              <div class="sidebar-box">
+                <h4>Información de la Materia</h4>
+                <div class="sidebar-item">
+                  <span class="item-label"><i class="fa-regular fa-clock"></i> Horas semanales:</span>
+                  <strong id="modal-sub-hours">5 horas</strong>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-label"><i class="fa-regular fa-calendar"></i> Duración:</span>
+                  <strong>Anual</strong>
+                </div>
+                <div class="sidebar-item">
+                  <span class="item-label"><i class="fa-solid fa-circle-check"></i> Tipo:</span>
+                  <strong id="modal-sub-type">Obligatoria</strong>
+                </div>
+              </div>
+
+              <div class="sidebar-box teacher-box">
+                <h4>Docente Asignado</h4>
+                <div class="teacher-info">
+                  <img src="" alt="Foto Docente" class="teacher-avatar" id="modal-teacher-img">
+                  <div class="teacher-text">
+                    <h5 id="modal-teacher-name">Nombre del Docente</h5>
+                    <span id="modal-teacher-degree">Título profesional</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- 4. SECCIÓN CONTACTO -->
+    <section id="contacto" class="page-section">
+      <div class="section-banner" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), url('./src/assets/campus.png');">
+        <div class="container text-center">
+          <h2>Contacto</h2>
+          <p class="section-lead">¿Tienes dudas o deseas agendar una visita guiada? Ponte en contacto con nuestro equipo de admisiones.</p>
+        </div>
+      </div>
+
+      <div class="container section-padding">
+        <div class="grid-2">
+          
+          <!-- Contact Info and Map -->
+          <div class="contact-details-column">
+            <h2>Nuestra Ubicación</h2>
+            <p class="m-b-3">Visítanos y conoce nuestras modernas aulas, laboratorios y áreas deportivas.</p>
+
+            <div class="contact-cards">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="contact-info-text">
+                  <h4>Dirección</h4>
+                  <p>Av. Bordo de contencion lt 5 , Villa Xochitenco, Chimalhuacan, Edo. Mex. Cp.56334</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <div class="contact-info-text">
+                  <h4>Teléfonos de Atención</h4>
+                  <p>Conmutador: +52 (55) 5555-1234<br>Admisiones: Ext. 102 y 103</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="contact-info-text">
+                  <h4>Horario de Operación</h4>
+                  <p>Lunes a Viernes: 7:30 AM - 4:00 PM<br>Sábados (Informes): 9:00 AM - 1:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Styled Map Placeholder (High-fidelity Map Design) -->
+            <div class="map-container-mock">
+              <div class="map-overlay-info">
+                <div class="map-marker"><i class="fa-solid fa-location-pin"></i></div>
+                <div class="map-tooltip">
+                  <h5>Escuela 0736 Quetzalcóatl</h5>
+                  <p>Villa Xochitenco, Edo. Mex.</p>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener">Ver en Google Maps</a>
+                </div>
+              </div>
+              <!-- Map Styled Graphics -->
+              <div class="map-graphic-layer">
+                <div class="map-road main-road"></div>
+                <div class="map-road secondary-road-1"></div>
+                <div class="map-road secondary-road-2"></div>
+                <div class="map-greenery park-1"></div>
+                <div class="map-greenery park-2"></div>
+                <div class="map-lake"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact / Admissions Form -->
+          <div class="contact-form-wrapper">
+            <div class="form-header">
+              <h3>Envíanos un Mensaje</h3>
+              <p>Llena el siguiente formulario y un asesor del departamento de admisiones te contactará en menos de 24 horas hábiles.</p>
+            </div>
+            
+            <form id="contact-school-form" novalidate>
+              <div class="form-grid-2">
+                <div class="input-group">
+                  <label for="contact-name">Nombre Completo <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="contact-name" placeholder="Ej. Juan Pérez" required>
+                  </div>
+                  <span class="validation-message" id="error-contact-name">El nombre es requerido.</span>
+                </div>
+                
+                <div class="input-group">
+                  <label for="contact-phone">Teléfono <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="contact-phone" placeholder="Ej. 5512345678" required>
+                  </div>
+                  <span class="validation-message" id="error-contact-phone">Ingresa un teléfono válido de 10 dígitos.</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="contact-email">Correo Electrónico <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="contact-email" placeholder="Ej. juan@correo.com" required>
+                </div>
+                <span class="validation-message" id="error-contact-email">Ingresa un correo electrónico válido.</span>
+              </div>
+
+              <div class="input-group">
+                <label for="contact-source">¿Cómo nos conociste?</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-circle-info"></i>
+                  <select id="contact-source">
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="Recomendación">Recomendación familiar</option>
+                    <option value="Redes Sociales">Redes sociales</option>
+                    <option value="Búsqueda Web">Búsqueda en Google</option>
+                    <option value="Anuncio Exterior">Espectacular/Folleto</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="contact-comments">Comentarios o Preguntas</label>
+                <div class="input-wrapper text-area-wrapper">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <textarea id="contact-comments" rows="4" placeholder="Cuéntanos más sobre tu hijo/a o tus dudas específicas..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="btn-submit-contact">
+                <span class="btn-text">Enviar Solicitud de Información</span>
+                <span class="btn-loading"><i class="fa-solid fa-spinner fa-spin"></i> Enviando...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Notification for Forms -->
+      <div class="toast" id="form-toast">
+        <div class="toast-content">
+          <div class="toast-icon" id="toast-icon-box"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="toast-message">
+            <h4 id="toast-title">¡Mensaje Enviado!</h4>
+            <p id="toast-desc">Tu solicitud ha sido recibida de forma exitosa.</p>
+          </div>
+        </div>
+        <button class="toast-close" id="btn-close-toast"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN LOGIN (PORTAL ALUMNO) -->
+    <section id="login" class="page-section">
+      <div class="login-wrapper">
+        <div class="login-decor-blob blob-1"></div>
+        <div class="login-decor-blob blob-2"></div>
+        
+        <div class="login-card-container">
+          <div class="login-card">
+            
+            <div class="login-header">
+              <div class="login-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h2>Portal Escolar</h2>
+              <p>Inicia sesión para acceder a tus calificaciones, horarios y comunicados oficiales.</p>
+            </div>
+            
+            <!-- Quick Demo Credentials Hint -->
+            <div class="demo-credentials-badge">
+              <h5><i class="fa-solid fa-circle-info"></i> Accesos de Demostración</h5>
+              <p style="margin-bottom: 0.25rem;"><strong>Alumno:</strong> <code>alumno@liceo.edu</code> | Contraseña: <code>123456</code></p>
+              <p style="margin-bottom: 0.25rem;"><strong>Maestro:</strong> <code>maestro@liceo.edu</code> | Contraseña: <code>123456</code></p>
+              <p style="margin-bottom: 0;"><strong>Admin:</strong> <code>admin@liceo.edu</code> | Contraseña: <code>admin2026</code></p>
+            </div>
+
+            <form id="student-login-form" novalidate>
+              <div class="input-group">
+                <label for="login-email">Usuario <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="login-email" placeholder="ejemplo@escuela0736.edu.mx" required>
+                </div>
+                <span class="validation-message" id="error-login-email">Ingresa tu usuario registrado.</span>
+              </div>
+
+              <div class="input-group">
+                <div class="label-wrapper">
+                  <label for="login-password">Contraseña <span class="required">*</span></label>
+                  <a href="#" class="forgot-pass-link">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="login-password" placeholder="••••••••" required>
+                  <button type="button" class="btn-toggle-password" id="btn-toggle-pass" aria-label="Mostrar contraseña">
+                    <i class="fa-regular fa-eye-slash" id="eye-icon"></i>
+                  </button>
+                </div>
+                <span class="validation-message" id="error-login-password">Ingresa tu contraseña de acceso.</span>
+              </div>
+
+              <div class="remember-me-row">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="login-remember">
+                  <span class="checkmark"></span>
+                  Mantener sesión iniciada
+                </label>
+              </div>
+
+              <span class="alert-error-message hidden" id="login-auth-error">
+                <i class="fa-solid fa-triangle-exclamation"></i> Las credenciales no coinciden. Intenta con las credenciales demo.
+              </span>
+
+              <button type="submit" class="btn btn-primary btn-block" id="btn-submit-login">
+                <span class="btn-text">Iniciar Sesión</span>
+                <span class="btn-loading"><i class="fa-solid fa-circle-notch fa-spin"></i> Cargando Panel...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SECCIÓN PORTAL ESTUDIANTIL (DASHBOARD) - ACCESIBLE TRAS LOGIN -->
+    <section id="portal" class="page-section">
+      <div class="portal-container">
+        
+        <!-- Dashboard Welcome Banner -->
+        <div class="portal-welcome-banner">
+          <div class="banner-welcome-content">
+            <span class="banner-tag">Portal del Alumno</span>
+            <h2>Bienvenido, <span id="student-display-name">Santiago Ortega Gómez</span></h2>
+            <p><i class="fa-solid fa-school"></i> Grado: <strong id="student-grado">3° de Secundaria</strong> | Grupo: <strong id="student-grupo">A</strong> | Ciclo: <strong>2026-2027</strong></p>
+          </div>
+          <div class="student-profile-summary">
+            <div class="summary-metric">
+              <span class="metric-val" id="student-promedio">9.4</span>
+              <span class="metric-lbl">Promedio General</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="student-reportes">0</span>
+              <span class="metric-lbl">Reportes</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="student-asistencia">95%</span>
+              <span class="metric-lbl">Asistencias</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Sub-Navigation Tabs -->
+        <div class="portal-nav-tabs">
+          <button class="portal-tab-btn active" data-portal-tab="resumen">
+            <i class="fa-solid fa-gauge-high"></i> Mi Resumen
+          </button>
+          <button class="portal-tab-btn" data-portal-tab="materias">
+            <i class="fa-solid fa-book-open"></i> Ver Materias
+          </button>
+          <button class="portal-tab-btn" data-portal-tab="maestros">
+            <i class="fa-solid fa-star"></i> Calificar Maestros
+          </button>
+        </div>
+
+        <!-- TAB 1: RESUMEN ACADÉMICO -->
+        <div class="portal-tab-content active" id="portal-tab-resumen">
+          <div class="portal-grid">
+            
+            <!-- Left Main Area (Grades and Schedule) -->
+            <div class="portal-main-area">
+              
+              <!-- Academic Performance Section (Interactive Graphics) -->
+              <div class="portal-card">
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                  <h3><i class="fa-solid fa-chart-line text-emerald"></i> Boleta de Calificaciones</h3>
+                  <div style="display: flex; gap: 10px; align-items: center;">
+                    <span class="header-action-badge">Segundo Trimestre</span>
+                    <button id="btn-download-student-boleta" class="btn btn-small btn-primary" style="background-color: var(--primary); font-size: 0.8rem; padding: 0.4rem 0.8rem; height: 32px;"><i class="fa-solid fa-file-pdf"></i> Descargar Boleta Oficial</button>
+                  </div>
+                </div>
+                <!-- Detailed Grades Table -->
+                <div class="grades-table-responsive">
+                  <table class="grades-table compact-grades-table">
+                    <thead>
+                      <tr>
+                        <th>Asignatura</th>
+                        <th class="text-center">P1</th>
+                        <th class="text-center">P2</th>
+                        <th class="text-center">P3</th>
+                        <th class="text-center">Tareas</th>
+                        <th class="text-center">Proy.</th>
+                        <th class="text-center">Part.</th>
+                        <th class="text-center">Asist.</th>
+                        <th class="text-center">Promedio</th>
+                        <th class="text-center">Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody id="student-grades-summary-tbody">
+                      <!-- Inyectado dinámicamente con JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Class Schedule Section -->
+              <div class="portal-card">
+                <div class="card-header">
+                  <h3><i class="fa-regular fa-calendar-days text-blue"></i> Horario Semanal de Clases</h3>
+                  <span class="header-action-badge">Horario Escolar</span>
+                </div>
+                <div class="schedule-table-responsive">
+                  <table class="schedule-table">
+                    <thead>
+                      <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="hour-col">07:30 - 08:30</td>
+                        <td><div class="sched-cell color-math">Matemáticas</div></td>
+                        <td><div class="sched-cell color-history">Historia</div></td>
+                        <td><div class="sched-cell color-math">Matemáticas</div></td>
+                        <td><div class="sched-cell color-english">Inglés</div></td>
+                        <td><div class="sched-cell color-history">Español</div></td>
+                      </tr>
+                      <tr>
+                        <td class="hour-col">08:30 - 09:30</td>
+                        <td><div class="sched-cell color-math">Matemáticas</div></td>
+                        <td><div class="sched-cell color-english">Inglés</div></td>
+                        <td><div class="sched-cell color-math">Matemáticas</div></td>
+                        <td><div class="sched-cell color-english">Español</div></td>
+                        <td><div class="sched-cell color-science">Química</div></td>
+                      </tr>
+                      <tr>
+                        <td class="hour-col">09:30 - 10:00</td>
+                        <td colspan="5" class="break-cell">Receso Escolar (Cafetería / Patio)</td>
+                      </tr>
+                      <tr>
+                        <td class="hour-col">10:00 - 11:30</td>
+                        <td><div class="sched-cell color-science">Química</div></td>
+                        <td><div class="sched-cell color-english">Inglés</div></td>
+                        <td><div class="sched-cell color-civics">Form. Cívica</div></td>
+                        <td><div class="sched-cell color-math">Matemáticas</div></td>
+                        <td><div class="sched-cell color-history">Historia</div></td>
+                      </tr>
+                      <tr>
+                        <td class="hour-col">11:30 - 13:00</td>
+                        <td><div class="sched-cell color-english">Inglés</div></td>
+                        <td><div class="sched-cell color-sports">Ed. Física</div></td>
+                        <td><div class="sched-cell color-english">Inglés</div></td>
+                        <td><div class="sched-cell color-arts">Artes</div></td>
+                        <td><div class="sched-cell color-sports">Ed. Física</div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Sidebar (Announcements and Academic Status) -->
+            <div class="portal-sidebar-area">
+              
+              <!-- Institutional Notice Board -->
+              <div class="portal-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-bullhorn text-gold"></i> Tablón de Anuncios</h3>
+                </div>
+                <div class="notices-list">
+                  <div class="notice-item">
+                    <div class="notice-meta">
+                      <span class="notice-date"><i class="fa-regular fa-clock"></i> Hace 2 horas</span>
+                      <span class="notice-badge badge-danger">Importante</span>
+                    </div>
+                    <h4>Exámenes del Segundo Trimestre</h4>
+                    <p>La jornada de exámenes trimestrales inicia el lunes 8 de junio. Recuerda revisar la guía de estudio publicada en cada materia y estar al corriente con tu colegiatura.</p>
+                  </div>
+
+                  <div class="notice-item">
+                    <div class="notice-meta">
+                      <span class="notice-date"><i class="fa-regular fa-clock"></i> Ayer</span>
+                      <span class="notice-badge badge-warning">Actividades</span>
+                    </div>
+                    <h4>Feria de Ciencias 2026</h4>
+                    <p>Se convoca a los alumnos de 3° grado a presentar sus proyectos de Química y Biología el viernes 13 de junio a las 10:00 AM en el patio principal. Inscripción con tu tutor.</p>
+                  </div>
+
+                  <div class="notice-item">
+                    <div class="notice-meta">
+                      <span class="notice-date"><i class="fa-regular fa-clock"></i> Hace 3 días</span>
+                      <span class="notice-badge badge-info">Información</span>
+                    </div>
+                    <h4>Campaña Escolar de Reforestación</h4>
+                    <p>El próximo sábado realizaremos nuestra siembra anual en el Parque Central. Estudiantes que deseen acumular horas de servicio comunitario inscribirse con su tutor.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Financial Status Box -->
+              <div class="portal-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-wallet text-emerald"></i> Estado de Cuenta</h3>
+                </div>
+                <div class="account-status-box">
+                  <div class="status-summary-row">
+                    <span class="status-label">Colegiatura Junio:</span>
+                    <span class="status-badge paid"><i class="fa-solid fa-circle-check"></i> Pagado</span>
+                  </div>
+                  <div class="status-summary-row">
+                    <span class="status-label">Próximo Vencimiento:</span>
+                    <strong>05 Jul 2026</strong>
+                  </div>
+                  <div class="status-summary-row">
+                    <span class="status-label">Monto Mensual:</span>
+                    <strong>$6,200.00 MXN</strong>
+                  </div>
+                  <button class="btn btn-secondary btn-block btn-small m-t-2"><i class="fa-solid fa-receipt"></i> Descargar Facturas</button>
+                </div>
+              </div>
+
+              <!-- Academic Support Center Quick Access -->
+              <div class="portal-card card-gradient-emerald">
+                <h3>¿Necesitas ayuda académica?</h3>
+                <p>Agenda una asesoría personalizada con tus profesores o contacta a soporte técnico escolar.</p>
+                <a href="#contacto" class="btn btn-secondary-light btn-block btn-small"><i class="fa-regular fa-envelope"></i> Solicitar Asesoría</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: VER MATERIAS ENROLADAS -->
+        <div class="portal-tab-content" id="portal-tab-materias">
+          <div class="portal-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-book-bookmark text-emerald"></i> Mis Asignaturas Enroladas</h3>
+              <span class="header-action-badge" id="enrolled-subjects-count">5 Materias en Curso</span>
+            </div>
+            <p class="m-b-3">Aquí puedes visualizar las materias que cursas en el ciclo actual, tu avance temático y el docente encargado.</p>
+            
+            <div class="student-subjects-grid" id="student-subjects-list">
+              <!-- Se inyecta dinámicamente con JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: CALIFICAR MAESTROS -->
+        <div class="portal-tab-content" id="portal-tab-maestros">
+          <div class="portal-card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-star-half-stroke text-gold"></i> Evaluación y Calificación de Profesores</h3>
+              <span class="header-action-badge">Evaluación Confidencial</span>
+            </div>
+            <p class="m-b-3">Califica el desempeño pedagógico de tus profesores del ciclo actual en una escala de 1 a 5 estrellas. Tu opinión nos ayuda a perfeccionar la calidad de nuestra enseñanza académica.</p>
+            
+            <div class="student-teachers-grid" id="student-teachers-eval-list">
+              <!-- Se inyecta dinámicamente con JS (tarjetas de profesores con estrellas interactivas) -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. SECCIÓN PORTAL MAESTRO (DASHBOARD) - ACCESIBLE TRAS LOGIN -->
+    <section id="portal-maestro" class="page-section">
+      <div class="portal-container">
+        
+        <!-- Dashboard Welcome Banner -->
+        <div class="portal-welcome-banner" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);">
+          <div class="banner-welcome-content">
+            <span class="banner-tag" style="background-color: var(--accent);">Portal del Docente</span>
+            <h2>Bienvenido, <span id="teacher-display-name">Prof. Sergio Hernandez Benitez</span></h2>
+            <p><i class="fa-solid fa-chalkboard-user"></i> Departamento: <strong>Ciencias Exactas</strong> | Ciclo: <strong>2026-2027</strong></p>
+          </div>
+          <div class="student-profile-summary">
+            <div class="summary-metric">
+              <span class="metric-val" id="teacher-profile-rating">4.8</span>
+              <span class="metric-lbl">Evaluación Alumnos</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="teacher-assigned-count">2</span>
+              <span class="metric-lbl">Materias a Cargo</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="teacher-total-students-count">9</span>
+              <span class="metric-lbl">Total Alumnos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portal Grid for Teachers -->
+        <div class="portal-grid">
+          
+          <!-- Left side: Subject Cards Selection and Enrolled Students List -->
+          <div class="portal-main-area">
+            
+            <!-- 1. Assigned Subjects Section -->
+            <div class="portal-card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-graduation-cap text-emerald"></i> Materias Asignadas</h3>
+                <span class="header-action-badge">Selecciona una materia para ver alumnos</span>
+              </div>
+              <p>Haz clic en cualquiera de tus asignaturas a cargo para gestionar la lista de estudiantes y sus calificaciones de participación.</p>
+              
+              <div class="teacher-subjects-grid" id="teacher-subjects-list">
+                <!-- Inyectado dinámicamente con JS (tarjetas de materias) -->
+              </div>
+            </div>
+
+            <!-- 2. Enrolled Students and Grading Section -->
+            <div class="portal-card" id="students-grading-card">
+              <div class="card-header flex-wrap-header">
+                <h3>
+                  <i class="fa-solid fa-users text-blue"></i> Alumnos Inscritos en: 
+                  <strong id="teacher-selected-subject-title" class="text-emerald">Selecciona una materia</strong>
+                </h3>
+                <div class="header-actions-group">
+                  <span class="header-action-badge" id="teacher-subject-code-badge">CÓDIGO</span>
+                  <button id="btn-download-grades-pdf" class="btn btn-secondary btn-small btn-pdf-download">
+                    <i class="fa-solid fa-file-pdf"></i> Descargar Reporte PDF
+                  </button>
+                </div>
+              </div>
+
+              <!-- Configuración de Pesos de Evaluación -->
+              <div class="weights-config-wrapper" style="margin: 1rem 1.5rem; padding: 1rem; background-color: var(--bg-light); border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 700;">
+                  <i class="fa-solid fa-sliders text-emerald"></i> Criterios de Evaluación y Pesos (%)
+                </h4>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.85rem;">
+                  Ajusta los porcentajes de cada rubro para calcular automáticamente el promedio. La suma debe ser exactamente 100%.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Ex. P1 (%)</label>
+                    <input type="number" id="weight-p1" class="participation-score-select text-center" value="20" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Ex. P2 (%)</label>
+                    <input type="number" id="weight-p2" class="participation-score-select text-center" value="20" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Ex. P3 (%)</label>
+                    <input type="number" id="weight-p3" class="participation-score-select text-center" value="20" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Tareas (%)</label>
+                    <input type="number" id="weight-homework" class="participation-score-select text-center" value="10" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Proy. (%)</label>
+                    <input type="number" id="weight-project" class="participation-score-select text-center" value="10" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Part. (%)</label>
+                    <input type="number" id="weight-participation" class="participation-score-select text-center" value="10" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--text-muted);">Asist. (%)</label>
+                    <input type="number" id="weight-attendance" class="participation-score-select text-center" value="10" min="0" max="100" style="width: 58px; padding: 0.35rem 0.2rem; font-size: 0.8rem;">
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.2rem; margin-left: auto;">
+                    <label style="font-size: 0.7rem; font-weight: 600; color: var(--primary);">Total</label>
+                    <span id="weight-total-display" style="font-size: 0.85rem; font-weight: 700; color: var(--secondary); padding: 0.35rem 0.5rem; background: rgba(16,185,129,0.1); border-radius: var(--radius-sm); border: 1px solid var(--secondary); line-height: 1;">100%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grades-table-responsive">
+                <table class="grades-table teacher-students-table">
+                  <thead>
+                    <tr>
+                      <th>Alumno</th>
+                      <th class="text-center">Matrícula</th>
+                      <th class="text-center" style="width: 70px;">Ex. P1</th>
+                      <th class="text-center" style="width: 70px;">Ex. P2</th>
+                      <th class="text-center" style="width: 70px;">Ex. P3</th>
+                      <th class="text-center" style="width: 70px;">Tareas</th>
+                      <th class="text-center" style="width: 70px;">Proy.</th>
+                      <th class="text-center" style="width: 70px;">Part.</th>
+                      <th class="text-center" style="width: 90px;">Asist. (%)</th>
+                      <th class="text-center" style="width: 80px;">Promedio</th>
+                      <th class="text-center" style="width: 100px;">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="teacher-students-list-body">
+                    <!-- Inyectado dinámicamente con JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right side: Teacher Tools and Statistics -->
+          <div class="portal-sidebar-area">
+            
+            <!-- Virtual Class Call Setup Card -->
+            <div class="portal-card" id="teacher-vc-config-card" style="display: none;">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-video text-blue"></i> Configurar Clase Virtual</h3>
+              </div>
+              <div style="padding: 1.25rem;">
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                  Configura el enlace de videollamada real para la materia: <strong id="vc-config-subject-title" class="text-emerald"></strong>
+                </p>
+                <div class="input-group" style="margin-bottom: 0.75rem;">
+                  <label for="teacher-vc-platform" style="font-size: 0.75rem; font-weight: 600;">Plataforma</label>
+                  <div class="input-wrapper" style="margin-top: 0.25rem;">
+                    <i class="fa-solid fa-chevron-down" style="position: absolute; left: auto; right: 10px; pointer-events: none; font-size: 0.8rem;"></i>
+                    <select id="teacher-vc-platform" style="width: 100%; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.5rem 2rem 0.5rem 0.75rem; font-size: 0.85rem; height: 38px; background: white; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
+                      <option value="zoom">Zoom</option>
+                      <option value="meet">Google Meet</option>
+                      <option value="teams">Microsoft Teams</option>
+                      <option value="other">Otro / Personalizado</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group" style="margin-bottom: 1rem;">
+                  <label for="teacher-vc-url" style="font-size: 0.75rem; font-weight: 600;">Enlace de la Reunión</label>
+                  <div class="input-wrapper" style="margin-top: 0.25rem;">
+                    <i class="fa-solid fa-link"></i>
+                    <input type="url" id="teacher-vc-url" placeholder="https://zoom.us/j/..." style="width: 100%; font-size: 0.8rem; padding: 0.5rem 0.5rem 0.5rem 2rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); height: 38px;">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block btn-small" id="btn-save-vc-link">
+                  <i class="fa-solid fa-floppy-disk"></i> Guardar Enlace
+                </button>
+              </div>
+            </div>
+
+            <!-- Virtual Class Call Setup Placeholder Card -->
+            <div class="portal-card" id="teacher-vc-config-placeholder">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-video text-muted"></i> Clase Virtual</h3>
+              </div>
+              <div style="padding: 1.25rem; text-align: center; color: var(--text-muted);">
+                <i class="fa-solid fa-video-slash" style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.5;"></i>
+                <p style="font-size: 0.8rem;">Selecciona una materia asignada para configurar su enlace de videollamada real.</p>
+              </div>
+            </div>
+
+            <!-- Group Statistics Card -->
+            <div class="portal-card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-chart-pie text-emerald"></i> Estadísticas del Grupo</h3>
+              </div>
+              <div class="account-status-box">
+                <div class="status-summary-row">
+                  <span class="status-label">Promedio de Participación:</span>
+                  <strong id="teacher-group-participation-avg" class="text-emerald">9.0 / 10</strong>
+                </div>
+                <div class="status-summary-row">
+                  <span class="status-label">Alumnos Evaluados:</span>
+                  <strong id="teacher-group-evaluated-count">5 / 5</strong>
+                </div>
+                <div class="status-summary-row">
+                  <span class="status-label">Rendimiento Promedio Gral:</span>
+                  <strong id="teacher-group-general-avg">9.1 / 10</strong>
+                </div>
+                
+                <div class="progress-bar-label m-t-2">
+                  <span>Porcentaje Evaluado</span>
+                  <span id="teacher-eval-percent-text">100%</span>
+                </div>
+                <div class="progress-bar-outer">
+                  <div class="progress-bar-inner" id="teacher-eval-percent-bar" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teacher Board Announcements -->
+            <div class="portal-card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-clipboard-list text-gold"></i> Agenda Docente</h3>
+              </div>
+              <div class="notices-list">
+                <div class="notice-item">
+                  <div class="notice-meta">
+                    <span class="notice-date"><i class="fa-regular fa-clock"></i> 5 de Junio</span>
+                    <span class="notice-badge badge-danger">Cierre</span>
+                  </div>
+                  <h4>Cierre de Calificaciones T2</h4>
+                  <p>Límite para capturar calificaciones finales de exámenes y portafolios del segundo trimestre en el sistema central.</p>
+                </div>
+
+                <div class="notice-item">
+                  <div class="notice-meta">
+                    <span class="notice-date"><i class="fa-regular fa-clock"></i> 12 de Junio</span>
+                    <span class="notice-badge badge-warning">Sesión</span>
+                  </div>
+                  <h4>Junta de Consejo Técnico</h4>
+                  <p>Sesión plenaria ordinaria a las 8:30 AM en la sala de juntas del edificio de administración. Asistencia obligatoria.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- support/help -->
+            <div class="portal-card card-gradient-emerald" style="background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);">
+              <h3>¿Dudas con la evaluación?</h3>
+              <p>Consulta el manual oficial de evaluación docente o contacta al coordinador académico del departamento.</p>
+              <button class="btn btn-secondary-light btn-block btn-small" onclick="alert('Descargando guía de criterios de evaluación de participación en formato PDF...');"><i class="fa-solid fa-file-pdf"></i> Ver Criterios SEP</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. SECCIÓN PORTAL ADMINISTRADOR (DASHBOARD) - ACCESIBLE SOLO PARA ADMINS -->
+    <section id="portal-admin" class="page-section">
+      <div class="portal-container admin-portal-container">
+
+        <!-- Admin Welcome Banner -->
+        <div class="portal-welcome-banner admin-welcome-banner">
+          <div class="banner-welcome-content">
+            <span class="banner-tag admin-banner-tag"><i class="fa-solid fa-shield-halved"></i> Panel de Administración</span>
+            <h2>Sistema de Gestión Escolar</h2>
+            <p><i class="fa-solid fa-school"></i> Escuela Secundaria 0736 Quetzalcóatl | Ciclo: <strong>2026-2027</strong></p>
+          </div>
+          <div class="student-profile-summary">
+            <div class="summary-metric">
+              <span class="metric-val" id="admin-stat-materias">9</span>
+              <span class="metric-lbl">Materias</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="admin-stat-alumnos">5</span>
+              <span class="metric-lbl">Alumnos</span>
+            </div>
+            <div class="summary-metric">
+              <span class="metric-val" id="admin-stat-maestros">5</span>
+              <span class="metric-lbl">Maestros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Sub-Navigation Tabs -->
+        <div class="portal-nav-tabs admin-tabs">
+          <button class="portal-tab-btn admin-tab-btn active" data-admin-tab="materias">
+            <i class="fa-solid fa-book-open"></i> Materias
+          </button>
+          <button class="portal-tab-btn admin-tab-btn" data-admin-tab="alumnos">
+            <i class="fa-solid fa-user-graduate"></i> Alumnos
+          </button>
+          <button class="portal-tab-btn admin-tab-btn" data-admin-tab="maestros">
+            <i class="fa-solid fa-chalkboard-user"></i> Maestros
+          </button>
+          <button class="portal-tab-btn admin-tab-btn" data-admin-tab="evaluaciones">
+            <i class="fa-solid fa-chart-bar"></i> Evaluaciones
+          </button>
+        </div>
+
+        <!-- TAB 1: GESTIÓN DE MATERIAS -->
+        <div class="admin-tab-content active" id="admin-tab-materias">
+          <div class="admin-section-header">
+            <h3><i class="fa-solid fa-book-open text-emerald"></i> Gestión de Materias</h3>
+            <button class="btn btn-primary btn-small" id="btn-add-materia">
+              <i class="fa-solid fa-plus"></i> Nueva Materia
+            </button>
+          </div>
+
+          <!-- Form Panel: Add Materia -->
+          <div class="admin-form-panel hidden" id="form-panel-materia">
+            <div class="admin-form-header">
+              <h4 id="form-materia-title"><i class="fa-solid fa-plus-circle"></i> Agregar Nueva Materia</h4>
+              <button class="admin-form-close" id="btn-close-form-materia"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-materia" class="admin-form" novalidate>
+              <input type="hidden" id="materia-edit-id">
+              <div class="admin-form-grid">
+                <div class="input-group">
+                  <label for="f-materia-titulo">Nombre de la Materia <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-book"></i>
+                    <input type="text" id="f-materia-titulo" placeholder="Ej. Matemáticas III" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-materia-codigo">Código <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-hashtag"></i>
+                    <input type="text" id="f-materia-codigo" placeholder="Ej. MAT-301" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-materia-categoria">Categoría <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-tags"></i>
+                    <select id="f-materia-categoria" required>
+                      <option value="" disabled selected>Seleccionar...</option>
+                      <option value="tecnologia">Tecnología e Ingeniería</option>
+                      <option value="ciencias">Ciencias Experimentales</option>
+                      <option value="humanidades">Humanidades e Idiomas</option>
+                      <option value="artes">Artes y Deportes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-materia-horas">Horas / semana <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-regular fa-clock"></i>
+                    <input type="number" id="f-materia-horas" placeholder="Ej. 5" min="1" max="10" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-materia-nivel">Nivel Escolar</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-layer-group"></i>
+                    <input type="text" id="f-materia-nivel" placeholder="Ej. 3° de Secundaria">
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-materia-tipo">Tipo</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-circle-dot"></i>
+                    <select id="f-materia-tipo">
+                      <option value="Obligatoria">Obligatoria</option>
+                      <option value="Optativa">Optativa</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="f-materia-desc">Descripción</label>
+                <div class="input-wrapper text-area-wrapper"><i class="fa-regular fa-comment-dots"></i>
+                  <textarea id="f-materia-desc" rows="3" placeholder="Descripción breve de la materia..."></textarea>
+                </div>
+              </div>
+              <div class="admin-form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-materia">Cancelar</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Materia</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Materias Table -->
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="admin-materias-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Nombre</th>
+                  <th>Categoría</th>
+                  <th>Horas/sem</th>
+                  <th>Tipo</th>
+                  <th>Nivel</th>
+                  <th class="text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="admin-materias-tbody">
+                <!-- Inyectado dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: GESTIÓN DE ALUMNOS -->
+        <div class="admin-tab-content" id="admin-tab-alumnos">
+          <div class="admin-section-header">
+            <h3><i class="fa-solid fa-user-graduate text-blue"></i> Gestión de Alumnos</h3>
+            <button class="btn btn-primary btn-small" id="btn-add-alumno">
+              <i class="fa-solid fa-plus"></i> Nuevo Alumno
+            </button>
+          </div>
+
+          <!-- Form Panel: Add Alumno -->
+          <div class="admin-form-panel hidden" id="form-panel-alumno">
+            <div class="admin-form-header">
+              <h4 id="form-alumno-title"><i class="fa-solid fa-user-plus"></i> Registrar Nuevo Alumno</h4>
+              <button class="admin-form-close" id="btn-close-form-alumno"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-alumno" class="admin-form" novalidate>
+              <input type="hidden" id="alumno-edit-id">
+              <div class="admin-form-grid">
+                <div class="input-group">
+                  <label for="f-alumno-nombre">Nombre Completo <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-regular fa-user"></i>
+                    <input type="text" id="f-alumno-nombre" placeholder="Ej. Juan García López" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-matricula">Matrícula <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-id-badge"></i>
+                    <input type="text" id="f-alumno-matricula" placeholder="Ej. ES-24001" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-grado">Grado <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-graduation-cap"></i>
+                    <select id="f-alumno-grado" required>
+                      <option value="" disabled selected>Seleccionar...</option>
+                      <option value="1° de Secundaria">1° de Secundaria</option>
+                      <option value="2° de Secundaria">2° de Secundaria</option>
+                      <option value="3° de Secundaria">3° de Secundaria</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-grupo">Grupo</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-users"></i>
+                    <select id="f-alumno-grupo">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-email">Correo Institucional</label>
+                  <div class="input-wrapper"><i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="f-alumno-email" placeholder="alumno@sec0736.edu.mx">
+                  </div>
+                </div>
+                 <div class="input-group">
+                  <label for="f-alumno-promedio">Promedio Inicial</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-star-half-stroke"></i>
+                    <input type="number" id="f-alumno-promedio" placeholder="Ej. 9.0" min="0" max="10" step="0.1">
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-password">Contraseña Portal Alumno <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-key"></i>
+                    <input type="text" id="f-alumno-password" placeholder="Ej. 123456" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-alumno-code-live">Contraseña Clases Virtuales (En Vivo) <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-video-slash"></i>
+                    <input type="text" id="f-alumno-code-live" placeholder="Ej. LIVE301" required>
+                  </div>
+                </div>
+              </div>
+              <div class="admin-form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-alumno">Cancelar</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Alumno</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Alumnos Table -->
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="admin-alumnos-table">
+              <thead>
+                <tr>
+                  <th>Matrícula</th>
+                  <th>Nombre</th>
+                  <th>Grado</th>
+                  <th>Grupo</th>
+                  <th>Promedio</th>
+                  <th>Correo</th>
+                  <th class="text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="admin-alumnos-tbody">
+                <!-- Inyectado dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: GESTIÓN DE MAESTROS -->
+        <div class="admin-tab-content" id="admin-tab-maestros">
+          <div class="admin-section-header">
+            <h3><i class="fa-solid fa-chalkboard-user text-gold"></i> Gestión de Maestros</h3>
+            <button class="btn btn-primary btn-small" id="btn-add-maestro">
+              <i class="fa-solid fa-plus"></i> Nuevo Maestro
+            </button>
+          </div>
+
+          <!-- Form Panel: Add Maestro -->
+          <div class="admin-form-panel hidden" id="form-panel-maestro">
+            <div class="admin-form-header">
+              <h4 id="form-maestro-title"><i class="fa-solid fa-user-tie"></i> Registrar Nuevo Maestro</h4>
+              <button class="admin-form-close" id="btn-close-form-maestro"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-maestro" class="admin-form" novalidate>
+              <input type="hidden" id="maestro-edit-id">
+              <div class="admin-form-grid">
+                <div class="input-group">
+                  <label for="f-maestro-nombre">Nombre Completo <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-regular fa-user"></i>
+                    <input type="text" id="f-maestro-nombre" placeholder="Ej. Dr. Roberto Méndez" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-email">Correo Institucional <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="f-maestro-email" placeholder="r.mendez@sec0736.edu.mx" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-titulo">Título Profesional <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-award"></i>
+                    <input type="text" id="f-maestro-titulo" placeholder="Ej. M.C. en Matemáticas" required>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-depto">Departamento</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-building-columns"></i>
+                    <select id="f-maestro-depto">
+                      <option value="Ciencias">Ciencias</option>
+                      <option value="Tecnología e Ingeniería">Tecnología e Ingeniería</option>
+                      <option value="Humanidades e Idiomas">Humanidades e Idiomas</option>
+                      <option value="Artes y Deportes">Artes y Deportes</option>
+                      <option value="Matemáticas">Matemáticas</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-materia">Materia Principal</label>
+                  <div class="input-wrapper"><i class="fa-solid fa-book"></i>
+                    <input type="text" id="f-maestro-materia" placeholder="Ej. Física Experimental">
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-img">URL Foto (opcional)</label>
+                  <div class="input-wrapper"><i class="fa-regular fa-image"></i>
+                    <input type="url" id="f-maestro-img" placeholder="https://...">
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="f-maestro-password">Contraseña Portal Docente <span class="required">*</span></label>
+                  <div class="input-wrapper"><i class="fa-solid fa-key"></i>
+                    <input type="text" id="f-maestro-password" placeholder="Ej. 123456" required>
+                  </div>
+                </div>
+              </div>
+              <div class="admin-form-actions">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-maestro">Cancelar</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Guardar Maestro</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Maestros Cards -->
+          <div class="admin-teachers-grid" id="admin-maestros-grid">
+            <!-- Inyectado dinámicamente -->
+          </div>
+        </div>
+
+        <!-- TAB 4: RESULTADOS DE EVALUACIONES -->
+        <div class="admin-tab-content" id="admin-tab-evaluaciones">
+          <div class="admin-section-header">
+            <h3><i class="fa-solid fa-chart-bar text-emerald"></i> Resultados de Evaluaciones Docentes</h3>
+            <span class="header-action-badge">Ciclo 2026-2027</span>
+          </div>
+
+          <!-- Summary Cards -->
+          <div class="eval-summary-cards" id="eval-summary-cards">
+            <!-- Inyectado dinámicamente -->
+          </div>
+
+          <!-- Mención Honorífica & Gráfico de Maestros -->
+          <div class="portal-card m-t-3">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+              <h3><i class="fa-solid fa-award text-gold"></i> Tabla del Profesorado y Menciones Honoríficas</h3>
+              <span class="header-action-badge">Evaluación Promedio</span>
+            </div>
+            <p class="m-b-3">Rendimiento y calificación de alumnos hacia los docentes. La escuela otorga Mención Honorífica a los profesores con puntaje igual o superior a 4.7★.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex-wrap: wrap;" class="grid-2 align-stretch">
+              <!-- Gráfica de Barras de Maestros -->
+              <div style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 15px;">
+                <h4 style="font-size: 0.9rem; color: var(--primary); margin-bottom: 5px;"><i class="fa-solid fa-chart-bar text-emerald"></i> Calificación Promedio por Maestro (★)</h4>
+                <div id="admin-teacher-bars-container" style="display: flex; flex-direction: column; gap: 12px; height: 260px; overflow-y: auto; padding-right: 5px;">
+                  <!-- Inyectado dinámicamente -->
+                </div>
+              </div>
+
+              <!-- Cuadro de Mención Honorífica -->
+              <div style="background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); border: 1px solid #fde68a; border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow-sm);">
+                <h4 style="font-size: 1.05rem; color: #b45309; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-trophy text-gold animated-bell"></i> Mención Honorífica Docente</h4>
+                <p style="font-size: 0.82rem; color: #92400e; margin-bottom: 8px;">Reconocimiento oficial a los catedráticos por su excelencia pedagógica, compromiso estudiantil y altos valores académicos.</p>
+                <div id="admin-teacher-honors-list" style="display: flex; flex-direction: column; gap: 10px; overflow-y: auto; max-height: 240px;">
+                  <!-- Inyectado dinámicamente -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Ratings Detail -->
+          <div class="portal-card m-t-3">
+            <div class="card-header">
+              <h3><i class="fa-regular fa-comments text-gold"></i> Comentarios de Alumnos por Maestro</h3>
+              <span class="header-action-badge">Evaluación Confidencial</span>
+            </div>
+            <p class="m-b-3">Retroalimentación escrita enviada por alumnos en sus evaluaciones de fin de trimestre.</p>
+            <div class="eval-comments-feed" id="eval-comments-feed">
+              <!-- Inyectado dinámicamente -->
+            </div>
+          </div>
+
+          <!-- Participation Rankings -->
+          <div class="portal-card m-t-3">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-ranking-star text-emerald"></i> Ranking de Participación Estudiantil</h3>
+              <span class="header-action-badge">Promedio por Materia</span>
+            </div>
+            <div class="admin-table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Materia</th>
+                    <th>Maestro</th>
+                    <th class="text-center">Promedio Participación</th>
+                    <th class="text-center">Alumnos Evaluados</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-participation-tbody">
+                  <!-- Inyectado dinámicamente -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- School-Wide Performance Stats & Graph -->
+          <div class="portal-card m-t-3">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+              <h3><i class="fa-solid fa-chart-area text-blue"></i> Rendimiento General de la Escuela</h3>
+              <span class="header-action-badge">Estadísticas por Grado</span>
+            </div>
+            <p class="m-b-3">Gráfico comparativo del promedio general acumulado de los alumnos inscritos agrupados por su respectivo grado escolar.</p>
+            
+            <div style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; display: flex; flex-direction: column; gap: 20px;">
+              <!-- Chart Visual Draw -->
+              <div style="display: flex; height: 250px; align-items: flex-end; border-bottom: 2px solid var(--text-muted); border-left: 2px solid var(--text-muted); padding: 0 20px 0 10px; gap: 40px; position: relative;">
+                
+                <!-- Y-Axis Lines & Labels -->
+                <div style="position: absolute; left: -45px; bottom: 0; display: flex; flex-direction: column; justify-content: space-between; height: 100%; font-size: 0.75rem; color: var(--text-muted); width: 40px; text-align: right; pointer-events: none;">
+                  <span>10.0</span>
+                  <span>7.5</span>
+                  <span>5.0</span>
+                  <span>2.5</span>
+                  <span>0.0</span>
+                </div>
+
+                <!-- Dotted grid lines -->
+                <div style="position: absolute; left: 0; right: 0; height: 1px; border-top: 1px dashed rgba(0,0,0,0.1); bottom: 100%; pointer-events: none;"></div>
+                <div style="position: absolute; left: 0; right: 0; height: 1px; border-top: 1px dashed rgba(0,0,0,0.1); bottom: 75%; pointer-events: none;"></div>
+                <div style="position: absolute; left: 0; right: 0; height: 1px; border-top: 1px dashed rgba(0,0,0,0.1); bottom: 50%; pointer-events: none;"></div>
+                <div style="position: absolute; left: 0; right: 0; height: 1px; border-top: 1px dashed rgba(0,0,0,0.1); bottom: 25%; pointer-events: none;"></div>
+
+                <!-- 1st Grade Bar -->
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end;">
+                  <div id="chart-bar-1grade" style="width: 50px; background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 6px 6px 0 0; transition: height 1s ease; position: relative; display: flex; align-items: flex-start; justify-content: center;">
+                    <span id="chart-val-1grade" style="color: white; font-weight: bold; font-size: 0.8rem; margin-top: -22px; position: absolute; background: var(--primary); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); white-space: nowrap;">0.0</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-dark); position: absolute; bottom: -25px; white-space: nowrap;">1° de Secundaria</span>
+                </div>
+
+                <!-- 2nd Grade Bar -->
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end;">
+                  <div id="chart-bar-2grade" style="width: 50px; background: linear-gradient(180deg, #10b981 0%, #047857 100%); border-radius: 6px 6px 0 0; transition: height 1s ease; position: relative; display: flex; align-items: flex-start; justify-content: center;">
+                    <span id="chart-val-2grade" style="color: white; font-weight: bold; font-size: 0.8rem; margin-top: -22px; position: absolute; background: var(--primary); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); white-space: nowrap;">0.0</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-dark); position: absolute; bottom: -25px; white-space: nowrap;">2° de Secundaria</span>
+                </div>
+
+                <!-- 3rd Grade Bar -->
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end;">
+                  <div id="chart-bar-3grade" style="width: 50px; background: linear-gradient(180deg, #f59e0b 0%, #b45309 100%); border-radius: 6px 6px 0 0; transition: height 1s ease; position: relative; display: flex; align-items: flex-start; justify-content: center;">
+                    <span id="chart-val-3grade" style="color: white; font-weight: bold; font-size: 0.8rem; margin-top: -22px; position: absolute; background: var(--primary); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); white-space: nowrap;">0.0</span>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: bold; color: var(--text-dark); position: absolute; bottom: -25px; white-space: nowrap;">3° de Secundaria</span>
+                </div>
+
+              </div>
+
+              <!-- Extra space below xAxis labels -->
+              <div style="height: 12px;"></div>
+
+              <!-- General Stats Description -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: 15px;">
+                <div style="text-align: center; border-right: 1px solid var(--border-color);">
+                  <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Promedio Global Escuela</h4>
+                  <strong id="school-general-avg-val" style="font-size: 1.8rem; color: var(--primary);">0.0</strong>
+                </div>
+                <div style="text-align: center; border-right: 1px solid var(--border-color);">
+                  <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Alumnos Registrados</h4>
+                  <strong id="school-total-students-val" style="font-size: 1.8rem; color: var(--secondary);">0</strong>
+                </div>
+                <div style="text-align: center;">
+                  <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Grado con Mayor Promedio</h4>
+                  <strong id="school-best-grade-val" style="font-size: 1.1rem; color: var(--accent); display: block; margin-top: 6px;">N/A</strong>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN CLASE VIRTUAL -->
+    <section id="clase-virtual" class="page-section">
+      
+      <!-- VISTA 1: Banner + Acceso -->
+      <div id="vc-access-view">
+        <div class="section-banner vc-banner" style="background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(6, 78, 59, 0.85)), url('./src/assets/campus.png');">
+          <div class="container text-center">
+            <div class="vc-banner-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+            <h2>Clase Virtual en Vivo</h2>
+            <p class="section-lead">Accede a tus clases en tiempo real desde cualquier lugar. La escuela te proporcionará un código de acceso para conectarte.</p>
+          </div>
+        </div>
+
+        <div class="container section-padding">
+          <!-- Features informativas -->
+          <div class="vc-features-grid">
+            <div class="vc-feature-item">
+              <div class="vc-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Acceso Seguro</h4>
+              <p>Solo alumnos autorizados por la escuela pueden ingresar a las clases virtuales.</p>
+            </div>
+            <div class="vc-feature-item">
+              <div class="vc-feature-icon"><i class="fa-solid fa-video"></i></div>
+              <h4>Video en Vivo HD</h4>
+              <p>Transmisión en alta definición para que no pierdas ningún detalle de la clase.</p>
+            </div>
+            <div class="vc-feature-item">
+              <div class="vc-feature-icon"><i class="fa-solid fa-comments"></i></div>
+              <h4>Chat Integrado</h4>
+              <p>Participa en la clase haciendo preguntas en tiempo real por el chat.</p>
+            </div>
+            <div class="vc-feature-item">
+              <div class="vc-feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <h4>Horario Escolar</h4>
+              <p>Las clases virtuales siguen el mismo horario que las presenciales.</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Acceso -->
+          <div class="vc-access-card-wrapper">
+            <div class="vc-access-card">
+              <div class="vc-access-header">
+                <div class="vc-access-logo"><i class="fa-solid fa-tower-broadcast"></i></div>
+                <h3>Acceder a Clase Virtual</h3>
+                <p>Ingresa el código de acceso y tu matrícula proporcionados por la escuela.</p>
+              </div>
+
+              <!-- Demo credentials -->
+              <div class="demo-credentials-badge">
+                <h5><i class="fa-solid fa-circle-info"></i> Acceso de Demostración</h5>
+                <p style="margin-bottom: 0.25rem;"><strong>Código:</strong> <code>VIRTUAL2026</code></p>
+                <p style="margin-bottom: 0;"><strong>Matrícula:</strong> <code>LB-24089</code></p>
+              </div>
+
+              <form id="vc-access-form" novalidate>
+                <div class="input-group">
+                  <label for="vc-access-code">Código de Acceso <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="text" id="vc-access-code" placeholder="Ej. VIRTUAL2026" required autocomplete="off">
+                  </div>
+                  <span class="validation-message" id="error-vc-code">Ingresa el código proporcionado por la escuela.</span>
+                </div>
+
+                <div class="input-group">
+                  <label for="vc-matricula">Matrícula del Alumno <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-id-card"></i>
+                    <input type="text" id="vc-matricula" placeholder="Ej. LB-24089" required autocomplete="off">
+                  </div>
+                  <span class="validation-message" id="error-vc-matricula">Ingresa tu matrícula escolar.</span>
+                </div>
+
+                <span class="alert-error-message hidden" id="vc-auth-error">
+                  <i class="fa-solid fa-triangle-exclamation"></i> Código o matrícula no válidos. Contacta a la escuela para obtener tu acceso.
+                </span>
+
+                <button type="submit" class="btn btn-primary btn-block" id="btn-vc-access">
+                  <span class="btn-text"><i class="fa-solid fa-right-to-bracket"></i> Ingresar a Clases Virtuales</span>
+                  <span class="btn-loading"><i class="fa-solid fa-circle-notch fa-spin"></i> Verificando acceso...</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISTA 2: Dashboard de Clases -->
+      <div id="vc-dashboard-view" class="hidden">
+        <div class="vc-dashboard-header">
+          <div class="container">
+            <div class="vc-dash-top">
+              <div class="vc-dash-info">
+                <span class="vc-dash-tag"><i class="fa-solid fa-tower-broadcast"></i> Aula Virtual</span>
+                <h2>Bienvenido, <span id="vc-student-name">Alumno</span></h2>
+                <p><i class="fa-solid fa-calendar-day"></i> <span id="vc-current-date">Lunes, 3 de Junio 2026</span> &nbsp;|&nbsp; <i class="fa-solid fa-clock"></i> <span id="vc-current-time">10:30 AM</span></p>
+              </div>
+              <button class="btn btn-secondary-light btn-small" id="btn-vc-logout"><i class="fa-solid fa-right-from-bracket"></i> Salir del Aula</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container vc-dashboard-body">
+          <div class="vc-dash-status-bar">
+            <div class="vc-status-item vc-status-live">
+              <span class="vc-live-dot"></span>
+              <span><strong id="vc-count-live">0</strong> En Vivo</span>
+            </div>
+            <div class="vc-status-item">
+              <i class="fa-regular fa-clock"></i>
+              <span><strong id="vc-count-upcoming">0</strong> Próximas</span>
+            </div>
+            <div class="vc-status-item">
+              <i class="fa-regular fa-circle-check"></i>
+              <span><strong id="vc-count-ended">0</strong> Finalizadas</span>
+            </div>
+          </div>
+
+          <h3 class="vc-section-title"><i class="fa-solid fa-chalkboard-user"></i> Clases del Día</h3>
+          <div class="vc-classes-grid" id="vc-classes-grid">
+            <!-- Inyectado dinámicamente -->
+          </div>
+        </div>
+      </div>
+
+      <!-- VISTA 3: Sala de Clase Virtual -->
+      <div id="vc-classroom-view" class="hidden">
+        <div class="vc-classroom">
+          <!-- Top bar -->
+          <div class="vc-classroom-topbar">
+            <div class="vc-topbar-left">
+              <button class="vc-back-btn" id="btn-vc-back"><i class="fa-solid fa-arrow-left"></i></button>
+              <div class="vc-class-info">
+                <h4 id="vc-room-subject">Matemáticas</h4>
+                <span id="vc-room-teacher">Prof. Sergio Hernandez</span>
+              </div>
+            </div>
+            <div class="vc-topbar-right">
+              <span class="vc-live-badge"><span class="vc-live-dot"></span> EN VIVO</span>
+              <span class="vc-viewer-count"><i class="fa-solid fa-users"></i> <span id="vc-viewers">24</span> conectados</span>
+            </div>
+          </div>
+
+          <!-- Main content area -->
+          <div class="vc-classroom-content">
+            <!-- Video area -->
+            <div class="vc-video-area">
+              <div class="vc-video-placeholder" id="vc-video-placeholder">
+                <div class="vc-video-overlay">
+                  <div class="vc-teacher-avatar-large">
+                    <img id="vc-room-teacher-img" src="" alt="Profesor">
+                  </div>
+                  <div class="vc-video-info">
+                    <h3 id="vc-room-subject-lg">Matemáticas</h3>
+                    <p id="vc-room-topic">Tema: Ecuaciones de segundo grado</p>
+                    <div class="vc-recording-indicator">
+                      <span class="vc-rec-dot"></span> Transmisión en vivo
+                    </div>
+                  </div>
+                  
+                  <!-- Tarjeta de enlace real Zoom / Meet / Teams -->
+                  <div class="vc-real-call-card hidden" id="vc-real-call-card">
+                    <div class="vc-real-call-icon" id="vc-real-call-icon"><i class="fa-solid fa-video"></i></div>
+                    <h5>¡Clase Activa en Vivo!</h5>
+                    <p id="vc-real-call-text">El profesor está transmitiendo en tiempo real mediante Zoom.</p>
+                    <a href="#" target="_blank" class="vc-real-call-btn" id="btn-vc-join-real">
+                      <i class="fa-solid fa-video"></i> Unirse a la Reunión
+                    </a>
+                  </div>
+                </div>
+                <!-- Animated background elements -->
+                <div class="vc-video-bg-anim">
+                  <div class="vc-wave vc-wave-1"></div>
+                  <div class="vc-wave vc-wave-2"></div>
+                  <div class="vc-wave vc-wave-3"></div>
+                </div>
+              </div>
+
+              <!-- Controls bar -->
+              <div class="vc-controls-bar">
+                <div class="vc-controls-group">
+                  <button class="vc-control-btn vc-disabled" title="Micrófono (deshabilitado)">
+                    <i class="fa-solid fa-microphone-slash"></i>
+                  </button>
+                  <button class="vc-control-btn vc-disabled" title="Cámara (deshabilitada)">
+                    <i class="fa-solid fa-video-slash"></i>
+                  </button>
+                  <button class="vc-control-btn" id="btn-vc-toggle-chat" title="Chat">
+                    <i class="fa-solid fa-comment"></i>
+                  </button>
+                  <button class="vc-control-btn vc-hand-btn" id="btn-vc-hand" title="Levantar la mano">
+                    <i class="fa-solid fa-hand"></i>
+                  </button>
+                </div>
+                <button class="vc-control-btn vc-leave-btn" id="btn-vc-leave" title="Salir de la clase">
+                  <i class="fa-solid fa-phone-slash"></i> Salir
+                </button>
+              </div>
+            </div>
+
+            <!-- Chat panel -->
+            <div class="vc-chat-panel" id="vc-chat-panel">
+              <div class="vc-chat-header">
+                <h4><i class="fa-solid fa-comments"></i> Chat de la Clase</h4>
+                <span id="vc-chat-count">0 mensajes</span>
+              </div>
+              <div class="vc-chat-messages" id="vc-chat-messages">
+                <!-- Mensajes inyectados dinámicamente -->
+              </div>
+              <div class="vc-chat-input-area">
+                <input type="text" id="vc-chat-input" placeholder="Escribe un mensaje..." autocomplete="off">
+                <button class="vc-chat-send-btn" id="btn-vc-send-chat"><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="./src/assets/logo.png" alt="Logo" style="width:38px;height:38px;border-radius:50%;object-fit:cover;">
+          <span>Esc. Sec. 0736 Quetzalcóatl</span>
+        </div>
+        <p>Una institución comprometida con la formación integral de líderes del futuro, con valores éticos, rigor académico y visión de transformación social.</p>
+        <p class="m-t-2">&copy; 2026 Escuela Secundaria 0736 Quetzalcóatl. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#inicio"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
+          <li><a href="#nosotros"><i class="fa-solid fa-chevron-right"></i> Nosotros</a></li>
+          <li><a href="#catalogo"><i class="fa-solid fa-chevron-right"></i> Catálogo de Materias</a></li>
+          <li><a href="#contacto"><i class="fa-solid fa-chevron-right"></i> Contacto y Visitas</a></li>
+          <li><a href="#clase-virtual"><i class="fa-solid fa-chevron-right"></i> Clase Virtual</a></li>
+          <li><a href="#login"><i class="fa-solid fa-chevron-right"></i> Portal de Alumnos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-legal">
+        <h3>Políticas</h3>
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-shield"></i> Aviso de Privacidad</a></li>
+          <li><a href="#"><i class="fa-solid fa-file-contract"></i> Reglamento Interno</a></li>
+          <li><a href="#"><i class="fa-solid fa-scale-balanced"></i> Términos de Servicio</a></li>
+          <li><a href="#"><i class="fa-solid fa-cookie-bite"></i> Configuración de Cookies</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>Boletín Informativo</h3>
+        <p>Suscríbete para recibir noticias, eventos y actualizaciones escolares directamente.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte a nuestro boletín!');">
+          <input type="email" placeholder="Tu correo electrónico" required aria-label="Correo para boletín">
+          <button type="submit" aria-label="Suscribirse"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jsPDF & jsPDF-AutoTable CDNs for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+  <!-- Custom JavaScript file -->
+  <script src="./src/main.js"></script>
+</body>
+</html>
+
