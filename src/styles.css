@@ -2933,6 +2933,8 @@ button:disabled {
   .hamburger-btn { display: block; }
   #desktop-menu { display: none; }
   #portal-menu { display: none; }
+  #portal-maestro-menu { display: none; }
+  #portal-admin-menu { display: none; }
   
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 1.25rem; }
   .subjects-grid { grid-template-columns: 1fr; }
@@ -4272,4 +4274,156 @@ button:disabled {
   font-size: 0.9rem;
 }
 
+/* ==========================================================================
+   MEJORAS MÓVIL ADICIONALES - RESPONSIVE TOUCH UX
+   ========================================================================== */
 
+/* Scroll horizontal en tablas de calificaciones y horarios en mobile */
+.grades-table-responsive,
+.schedule-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+}
+
+/* Hacer botones más fáciles de tocar en móvil */
+@media (max-width: 768px) {
+  /* Banner notice: stacking vertical en mobile */
+  .notice-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .notice-info h3 {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  /* Admin form grid: una columna en mobile */
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Botones de acción del admin: stack vertical */
+  .admin-section-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  .admin-section-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Tabla de maestros: overflow horizontal para no romper layout */
+  .teacher-students-table,
+  .grades-table,
+  .schedule-table,
+  .admin-table {
+    min-width: 600px;
+  }
+
+  /* Contact form mejorado en móvil */
+  .contact-form-wrapper {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Tamaños de tap targets mínimos (WCAG) */
+  .btn, button, .nav-link, .mobile-nav-link {
+    min-height: 44px;
+  }
+  .filter-btn {
+    min-height: 40px;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  /* Modal mejoras en móvil */
+  .modal-card {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+  }
+
+  /* Clase Virtual: video area en mobile */
+  .vc-real-call-card {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Hero slider ajustes extra */
+  .hero-slider {
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Botones hero en columna en pantallas muy pequeñas */
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Stats grid: 2 columnas en muy pequeño */
+  .stats-counter-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .stat-box {
+    padding: 1.25rem 0.75rem;
+  }
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  /* Portal tabs: scroll horizontal sin wrap */
+  .portal-nav-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+  .portal-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Login card: padding mínimo */
+  .login-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Demo badge: texto más pequeño */
+  .demo-credentials-badge {
+    font-size: 0.78rem;
+    padding: 0.75rem;
+  }
+  .demo-credentials-badge code {
+    font-size: 0.75rem;
+  }
+
+  /* Footer newsletter: stack */
+  .newsletter-form {
+    flex-direction: column;
+    height: auto;
+    gap: 0.5rem;
+  }
+  .newsletter-form input {
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+  .newsletter-form button {
+    width: 100%;
+    border-radius: var(--radius-md);
+    height: 46px;
+  }
+}
