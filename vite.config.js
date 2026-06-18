@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Base para GitHub Pages: usa el nombre del repositorio
-  base: '/web-escuela/',
+  // Base relativa: funciona en Vercel, GitHub Pages y local
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
