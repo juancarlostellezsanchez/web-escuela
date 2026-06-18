@@ -247,7 +247,8 @@ button:disabled {
   align-items: center;
   gap: 0.75rem;
   max-width: 320px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   text-decoration: none;
 }
 .logo-icon {
@@ -2944,7 +2945,7 @@ button:disabled {
   
   .hero-slider { height: 420px; }
   .features-summary { margin-top: 0; padding-top: 1.5rem; }
-  .slider-btn { display: none; } /* Hide prev/next buttons on mobile for touch gestures */
+  /* .slider-btn { display: none; } - Removed because touch gestures aren't implemented */
   
   .slide-content { padding: 0 1rem; text-align: center; }
   .slide-content h1 { font-size: 1.8rem; margin-bottom: 0.75rem; line-height: 1.2; }

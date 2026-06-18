@@ -671,7 +671,7 @@ function navigateTo(targetHash) {
   updateActiveNavLink(cleanHash);
 
   // Subir scroll al tope
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  window.scrollTo(0, 0);
 
   // Si la sección cargada es el Inicio, disparar contadores animados
   if (cleanHash === "inicio") {
