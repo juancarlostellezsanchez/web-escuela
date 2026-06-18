@@ -757,6 +757,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // Redirigir según hash o cargar Inicio
   navigateTo(window.location.hash || "#inicio");
 
+  // Click directo en enlaces del menú desktop (necesario si el hash ya es el mismo)
+  document.querySelectorAll(".nav-link, .nav-btn-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        window.location.hash = href;
+        navigateTo(href.replace("#", ""));
+      }
+    });
+  });
+
   // Inicializar componentes
   initMobileMenu();
   initHeroSlider();
@@ -797,6 +809,21 @@ function initMobileMenu() {
       }
     });
   }
+
+  // Click directo en enlaces del menú móvil (necesario en móvil si el hash no cambia)
+  const mobLinks = document.querySelectorAll(".mobile-nav-link, .mobile-nav-btn");
+  mobLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const target = href.replace("#", "");
+        window.location.hash = href;
+        navigateTo(target);
+        closeMobileMenu();
+      }
+    });
+  });
 }
 
 function openMobileMenu() {
